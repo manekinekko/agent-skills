@@ -4,11 +4,10 @@ Thanks for your interest in contributing! Here's how to get involved.
 
 ## Adding a new skill
 
-1. Create a top-level directory with a descriptive kebab-case name (must match the `name` field in frontmatter).
+1. Create a directory under `.agents/skills/` with a descriptive kebab-case name (must match the `name` field in frontmatter).
 2. Add a `SKILL.md` file with the required frontmatter (see existing skills for reference).
 3. Include any supporting scripts, references, or assets in subdirectories.
-4. Validate with `npx skills-ref validate ./your-skill-name`.
-5. Update the root `README.md` skills table.
+4. Update the root `README.md` skills table.
 
 ### Skill frontmatter
 

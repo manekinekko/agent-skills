@@ -1,60 +1,65 @@
 # Agent Skills
 
-A curated collection of reusable [Agent Skills](https://agentskills.io) for everyday use.
+_A curated collection of personal [Agent Skills](https://agentskills.io) I use in my daily workflows._
 
-Each skill follows the [Agent Skills specification](https://agentskills.io/specification) and works with any compatible agent (GitHub Copilot, Claude Code, Cursor, Gemini CLI, and [more](https://agentskills.io/clients)).
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](./LICENSE)
+
+[Skills](#skills) • [Installation](#installation) • [Usage](#usage)
+
+This repository hosts a set of reusable skills for AI coding agents (Claude Code, Codex, GitHub Copilot, Cursor, OpenCode, and many others). Each skill packages procedural knowledge, references, and sometimes scripts to help an agent perform a specific task reliably and consistently.
 
 ## Skills
 
 | Skill | Description |
 |-------|-------------|
-| [ux-walkthrough-recording](./ux-walkthrough-recording/) | Produce reviewer-ready UX walkthrough videos and per-screen screenshots for a running web app |
+| [`ux-walkthrough-recording`](./.agents/skills/ux-walkthrough-recording/SKILL.md) | Produce reviewer-ready UX walkthrough videos and per-screen screenshots for a running web app |
 
 ## Installation
 
-Install any skill into your project with `npx`:
+These skills are designed to be installed with the [`skills`](https://github.com/vercel-labs/skills) CLI, which works with [50+ agents](https://github.com/vercel-labs/skills#supported-agents) including Claude Code, Codex, GitHub Copilot, Cursor, and OpenCode.
+
+### Install everything
+
+Install all skills from this repository into the current project:
 
 ```bash
-npx skills-ref install github:manekinekko/agent-skills/ux-walkthrough-recording
+npx skills add manekinekko/agent-skills
 ```
 
-This copies the skill into your project's `.agents/skills/` directory where agents can discover it.
-
-### Verify
+Or install them globally (available across all your projects):
 
 ```bash
-npx skills-ref validate .agents/skills/ux-walkthrough-recording
+npx skills add manekinekko/agent-skills -g
 ```
 
-## Repository structure
+### Install a single skill
 
-```
-agent-skills/
-├── ux-walkthrough-recording/   # Each skill is a top-level directory
-│   ├── SKILL.md                # Required: metadata + instructions
-│   └── scripts/                # Optional: executable code
-├── CONTRIBUTING.md
-├── CODE_OF_CONDUCT.md
-├── SECURITY.md
-├── LICENSE
-└── README.md
+Pick only the ones you need:
+
+```bash
+npx skills add manekinekko/agent-skills --skill ux-walkthrough-recording
 ```
 
-Each skill directory is self-contained and follows the [spec directory structure](https://agentskills.io/specification):
-- `SKILL.md` — Required. YAML frontmatter (`name`, `description`) + markdown instructions.
-- `scripts/` — Optional. Executable code agents can run.
-- `references/` — Optional. Additional documentation loaded on demand.
-- `assets/` — Optional. Templates, images, data files.
+### Browse before installing
 
-## Compatibility
+```bash
+npx skills add manekinekko/agent-skills --list
+```
 
-Skills in this repo are tested with:
-- [GitHub Copilot](https://github.com/features/copilot) (VS Code agent mode)
-- [Claude Code](https://claude.ai/code)
-- [Cursor](https://cursor.com/)
+> **Note:** The `skills` CLI installs skills into the convention expected by each target agent (e.g. `.claude/skills/` for Claude Code, `~/.copilot/skills/` for Copilot CLI). See the [CLI README](https://github.com/vercel-labs/skills#installation-scope) for the full list of locations.
 
-They should work with any client that supports the [Agent Skills format](https://agentskills.io/clients).
+## Usage
+
+Once installed, your agent will automatically discover the skills and trigger them when the conversation matches a skill's `description`. You don't need to invoke them manually — just describe what you want and the agent will pick the right skill.
+
+A few examples:
+
+- _"Record a walkthrough of the new UI"_ → triggers [`ux-walkthrough-recording`](./.agents/skills/ux-walkthrough-recording/SKILL.md)
+- _"Capture screenshots for the PR"_ → triggers [`ux-walkthrough-recording`](./.agents/skills/ux-walkthrough-recording/SKILL.md)
+- _"Make a demo video of the app"_ → triggers [`ux-walkthrough-recording`](./.agents/skills/ux-walkthrough-recording/SKILL.md)
+
+> **Tip:** Most coding agents also support invoking skills with slash commands (e.g. `/ux-walkthrough-recording`).
 
 ## License
 
-[MIT](./LICENSE)
+All skills in this repository are licensed under the [MIT License](./LICENSE).
