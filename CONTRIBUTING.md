@@ -4,24 +4,25 @@ Thanks for your interest in contributing! Here's how to get involved.
 
 ## Adding a new skill
 
-1. Create a directory under `skills/` with a descriptive kebab-case name.
-2. Add a `SKILL.md` file with the standard frontmatter (see existing skills for reference).
-3. Include any supporting scripts or references in subdirectories.
-4. Update the root `README.md` skills table.
+1. Create a top-level directory with a descriptive kebab-case name (must match the `name` field in frontmatter).
+2. Add a `SKILL.md` file with the required frontmatter (see existing skills for reference).
+3. Include any supporting scripts, references, or assets in subdirectories.
+4. Validate with `npx skills-ref validate ./your-skill-name`.
+5. Update the root `README.md` skills table.
 
 ### Skill frontmatter
 
-Every `SKILL.md` must include YAML frontmatter with at minimum:
+Every `SKILL.md` must include YAML frontmatter following the [Agent Skills specification](https://agentskills.io/specification):
 
 ```yaml
 ---
-name: your-skill-name
-description: >
+name: your-skill-name          # Required. Must match directory name. Lowercase + hyphens only.
+description: >                 # Required. Max 1024 chars. Describe what it does AND when to use it.
   A concise description of what the skill does and when to use it.
-compatibility: platforms, runtimes, and tools required
-metadata:
+compatibility: macOS or Linux, Node 18+   # Optional. Environment requirements.
+metadata:                      # Optional. Arbitrary key-value pairs.
   version: "1.0.0"
-allowed-tools: list of tools the skill needs
+allowed-tools: Bash(node:*) Read Write    # Optional. Pre-approved tools (experimental).
 ---
 ```
 
