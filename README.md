@@ -12,7 +12,7 @@ This repository hosts a set of reusable skills for AI coding agents (Claude Code
 
 | Skill | Description |
 |-------|-------------|
-| [`ux-walkthrough-recording`](./.agents/skills/ux-walkthrough-recording/SKILL.md) | Produce reviewer-ready UX walkthrough videos and per-screen screenshots for a running web app |
+| [`screen-capture`](./.agents/skills/screen-capture/SKILL.md) | Produce reviewer-ready UX walkthrough videos and per-screen screenshots for a running web app |
 
 ## Installation
 
@@ -37,7 +37,7 @@ npx skills add manekinekko/agent-skills -g
 Pick only the ones you need:
 
 ```bash
-npx skills add manekinekko/agent-skills --skill ux-walkthrough-recording
+npx skills add manekinekko/agent-skills --skill screen-capture
 ```
 
 ### Browse before installing
@@ -54,11 +54,11 @@ Once installed, your agent will automatically discover the skills and trigger th
 
 A few examples:
 
-- _"Record a walkthrough of the new UI"_ → triggers [`ux-walkthrough-recording`](./.agents/skills/ux-walkthrough-recording/SKILL.md)
-- _"Capture screenshots for the PR"_ → triggers [`ux-walkthrough-recording`](./.agents/skills/ux-walkthrough-recording/SKILL.md)
-- _"Make a demo video of the app"_ → triggers [`ux-walkthrough-recording`](./.agents/skills/ux-walkthrough-recording/SKILL.md)
+- _"Record a walkthrough of the new UI"_ → triggers [`screen-capture`](./.agents/skills/screen-capture/SKILL.md)
+- _"Capture screenshots for the PR"_ → triggers [`screen-capture`](./.agents/skills/screen-capture/SKILL.md)
+- _"Make a demo video of the app"_ → triggers [`screen-capture`](./.agents/skills/screen-capture/SKILL.md)
 
-> **Tip:** Most coding agents also support invoking skills with slash commands (e.g. `/ux-walkthrough-recording`).
+> **Tip:** Most coding agents also support invoking skills with slash commands (e.g. `/screen-capture`).
 
 ## License
 

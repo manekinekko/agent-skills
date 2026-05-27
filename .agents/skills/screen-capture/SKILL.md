@@ -1,5 +1,5 @@
 ---
-name: ux-walkthrough-recording
+name: screen-capture
 description: >
   Produce reviewer-ready UX walkthrough videos and per-screen screenshots for a
   running web app (typically for inclusion in a PR description). Use this skill when:
