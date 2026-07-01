@@ -13,6 +13,7 @@ This repository hosts a set of reusable skills for AI coding agents (Claude Code
 | Skill | Description |
 |-------|-------------|
 | [`screen-capture`](./.agents/skills/screen-capture/SKILL.md) | Produce reviewer-ready UX walkthrough videos and per-screen screenshots for a running web app |
+| [`docker-to-podman`](./.agents/skills/docker-to-podman/SKILL.md) | Migrate a macOS (Apple Silicon) machine from Docker Desktop to Podman while keeping `docker`/`docker compose` working, with fixes for the common cutover failures |
 
 ## Installation
 
@@ -57,6 +58,8 @@ A few examples:
 - _"Record a walkthrough of the new UI"_ → triggers [`screen-capture`](./.agents/skills/screen-capture/SKILL.md)
 - _"Capture screenshots for the PR"_ → triggers [`screen-capture`](./.agents/skills/screen-capture/SKILL.md)
 - _"Make a demo video of the app"_ → triggers [`screen-capture`](./.agents/skills/screen-capture/SKILL.md)
+- _"Uninstall Docker Desktop and move me to Podman"_ → triggers [`docker-to-podman`](./.agents/skills/docker-to-podman/SKILL.md)
+- _"My compose build fails with exit status 137 on Podman"_ → triggers [`docker-to-podman`](./.agents/skills/docker-to-podman/SKILL.md)
 
 > **Tip:** Most coding agents also support invoking skills with slash commands (e.g. `/screen-capture`).
 
