@@ -14,6 +14,7 @@ This repository hosts a set of reusable skills for AI coding agents (Claude Code
 |-------|-------------|
 | [`screen-capture`](./.agents/skills/screen-capture/SKILL.md) | Produce reviewer-ready UX walkthrough videos and per-screen screenshots for a running web app |
 | [`docker-to-podman`](./.agents/skills/docker-to-podman/SKILL.md) | Migrate a macOS (Apple Silicon) machine from Docker Desktop to Podman while keeping `docker`/`docker compose` working, with fixes for the common cutover failures |
+| [`pr-review`](./.agents/skills/pr-review/SKILL.md) | Review a pull request safely and thoroughly — security, UX, data-model, infra, API compatibility, migrations, testing, and docs lenses — recording findings as inline PR comments and tracking issues (read-only on the code) |
 
 ## Installation
 
@@ -60,6 +61,8 @@ A few examples:
 - _"Make a demo video of the app"_ → triggers [`screen-capture`](./.agents/skills/screen-capture/SKILL.md)
 - _"Uninstall Docker Desktop and move me to Podman"_ → triggers [`docker-to-podman`](./.agents/skills/docker-to-podman/SKILL.md)
 - _"My compose build fails with exit status 137 on Podman"_ → triggers [`docker-to-podman`](./.agents/skills/docker-to-podman/SKILL.md)
+- _"Review this PR"_ / _"Do a security audit of this PR"_ → triggers [`pr-review`](./.agents/skills/pr-review/SKILL.md)
+- _"Flag these findings as inline comments and open a tracking issue"_ → triggers [`pr-review`](./.agents/skills/pr-review/SKILL.md)
 
 > **Tip:** Most coding agents also support invoking skills with slash commands (e.g. `/screen-capture`).
 
